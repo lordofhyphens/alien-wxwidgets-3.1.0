@@ -1,0 +1,5 @@
+do{ my $x = {
+       'build_bat' => 1,
+       'install_base' => 'C:\\\\users\\\\lenox\\\\slic3r\\\\LOCAL-~1'
+     };
+$x; }

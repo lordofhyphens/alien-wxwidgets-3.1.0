@@ -1,0 +1,15 @@
+do{ my $x = {
+       'build_requires' => {
+                             'ExtUtils::CBuilder' => '0.24',
+                             'File::Spec' => '1.50',
+                             'Module::Build' => '0.28'
+                           },
+       'conflicts' => {},
+       'recommends' => {},
+       'requires' => {
+                       'Module::Pluggable' => '2.6',
+                       'perl' => '5.006'
+                     },
+       'test_requires' => {}
+     };
+$x; }
