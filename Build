@@ -1,4 +1,4 @@
-#!perl
+#! /home/travis/perl5/perlbrew/perls/slic3r-perl/bin/perl
 
 use strict;
 use Cwd;
@@ -6,12 +6,12 @@ use File::Basename;
 use File::Spec;
 
 sub magic_number_matches {
-  return 0 unless -e '_build\\magicnum';
+  return 0 unless -e '_build/magicnum';
   my $FH;
-  open $FH, '<','_build\\magicnum' or return 0;
+  open $FH, '<','_build/magicnum' or return 0;
   my $filenum = <$FH>;
   close $FH;
-  return $filenum == 970024;
+  return $filenum == 427645;
 }
 
 my $progname;
@@ -20,7 +20,7 @@ BEGIN {
   $^W = 1;  # Use warnings
   $progname = basename($0);
   $orig_dir = Cwd::cwd();
-  my $base_dir = 'C:\\STRAWB~1\\data\\CPANM~1\\work\\149059~1.559\\ALIEN-~1.67';
+  my $base_dir = '/home/travis/alien-wxwidgets-3.1.0';
   if (!magic_number_matches()) {
     unless (chdir($base_dir)) {
       die ("Couldn't chdir($base_dir), aborting\n");
@@ -33,11 +33,15 @@ BEGIN {
     (
      'lib',
      'inc',
-     'C:\\strawberry\\data\\.cpanm\\work\\1490594291.5592\\Alien-wxWidgets-0.67\\_build\\lib',
-     'C:\\users\\lenox\\slic3r\\LOCAL-~1\\lib\\perl5\\5.24.1\\MSWin32-x64-multi-thread',
-     'C:\\users\\lenox\\slic3r\\LOCAL-~1\\lib\\perl5\\5.24.1',
-     'C:\\users\\lenox\\slic3r\\LOCAL-~1\\lib\\perl5\\MSWin32-x64-multi-thread',
-     'C:\\users\\lenox\\slic3r\\LOCAL-~1\\lib\\perl5'
+     '/home/travis/alien-wxwidgets-3.1.0/_build/lib',
+     '/home/travis/Slic3r/local-lib/lib/perl5/5.24.0/x86_64-linux-thread-multi',
+     '/home/travis/Slic3r/local-lib/lib/perl5/5.24.0',
+     '/home/travis/Slic3r/local-lib/lib/perl5/x86_64-linux-thread-multi',
+     '/home/travis/Slic3r/local-lib/lib/perl5',
+     '/home/travis/Slic3r/lib/perl5/5.24.0/x86_64-linux-thread-multi',
+     '/home/travis/Slic3r/lib/perl5/5.24.0',
+     '/home/travis/Slic3r/lib/perl5/x86_64-linux-thread-multi',
+     '/home/travis/Slic3r/lib/perl5'
     );
 }
 

@@ -30,8 +30,9 @@ do{ my $x = {
        'compiler_version' => '3.4',
        'extraflags' => '',
        'graphicscontext' => 1,
-       'install_only' => 0,
-       'mk_portable' => 1,
-       'userpatch' => ''
+       'install_only' => '',
+       'mk_portable' => '',
+       'userpatch' => '',
+       'wx_config' => '/home/travis/alien-wxwidgets-3.1.0/wxWidgets-3.1.0/bld/lib/wx/config/gtk3-unicode-3.1'
      };
 $x; }
